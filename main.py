@@ -17,20 +17,11 @@ business_name = st.selectbox(
     ["-- Select --", "LumelaWeb", "Client A", "Client B", "Other"]
 )
 
-# ---- DATA UPLOAD ----
-st.subheader("📁 Upload Monthly CSV Data")
-uploaded_file = st.file_uploader("Upload your combined CSV file", type="csv")
-
+# ---- CSV PARSER FUNCTION ----
 def try_parse_csv(file):
     try:
         file.seek(0)
         return pd.read_csv(file)
     except:
         pass
-    try:
-        file.seek(0)
-        return pd.read_csv(file, encoding='ISO-8859-1')
-    except:
-        pass
-    try:
-        file.s
+    t
